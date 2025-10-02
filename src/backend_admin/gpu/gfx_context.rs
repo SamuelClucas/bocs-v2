@@ -3,7 +3,6 @@ use winit::{
     dpi::PhysicalSize,
     window::Window};
 use wgpu::{Adapter, Device, Instance, Queue, Surface, SurfaceConfiguration};
-use anyhow::Result;
 use std::error::Error;
 
 pub struct GraphicsContext {

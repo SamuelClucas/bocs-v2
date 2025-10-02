@@ -1,0 +1,93 @@
+digraph bocs {
+
+    rankdir=TB; // top-to-bottom layout
+    node [shape=circle, style=filled, fontname="Arial"];
+    splines=true;
+    compound=true;
+    nodesep=0.6;
+    ranksep=0.8;
+
+
+    // Nodes with colours roughly matching your PNG
+    main      [label="main.rs", fillcolor="#5EC5FF"];          // blue
+    app_dispatcher  [label="app_dispatcher.rs", fillcolor="#FF9A33"]; // orange
+    state     [label="state.rs", fillcolor="#FEC84D"];         // yellow
+    bridge    [label="bridge.rs", fillcolor="#00E0FF"];        // cyan
+    gfx_context   [label="gfx_context.rs", fillcolor="#D96BFF"];   // pink-purple
+    builders  [label="builders.rs", fillcolor="#8D4FFF"];      // purple
+    resources [label="resources.rs", fillcolor="#1FA86C"];     // green
+    render    [label="render.rs", fillcolor="#A49A15"];        // olive
+    compute   [label="compute.rs", fillcolor="#C0C0C0"];       // grey
+    enums     [label="enums.rs", fillcolor="#3ED6D6"];         // teal
+    world     [label="world.rs", fillcolor="#F85DAA"];         // pink
+    camera    [label="camera.rs", fillcolor="#71C76F"];        // light green
+    voxel_grid     [label="voxel_grid.rs", fillcolor="#38D3D3"];    // light cyan
+    brownian_motion  [label="brownian_motion.rs", fillcolor="#FF5CAD"]; // bright pink
+    shaders   [label="shaders/\ninit.wgsl\nlaplacian.wgsl\nraymarch.wgsl", shape=box, fillcolor="#E94B3C"];
+
+    // root cluster
+    subgraph cluster_project_root {
+        label="root/";
+        style=dashed;
+        main;
+    }
+
+    // backend cluster
+    subgraph cluster_backend_admin {
+        label="backend_admin/";
+        style=dashed;
+        rank=same;
+        state;
+        bridge;
+        app_dispatcher;
+    }
+    
+    // GPU cluster
+    subgraph cluster_gpu {
+        label="gpu/";
+        style=dotted;
+        rank=same;
+        compute;
+        render;
+        gfx_context;
+        builders;
+        enums;
+        resources;
+    }
+
+    // World cluster
+    subgraph cluster_world {
+        label="world/";
+        style=dotted;
+        rank=same;
+        world;
+        camera;
+        voxel_grid;
+        brownian_motion;
+    }
+
+    // edges
+    main -> app_dispatcher;
+    app_dispatcher -> state;
+    state -> bridge;
+    state -> compute;
+    state -> render;
+    gfx_context -> bridge;
+    gfx_context -> compute;
+    gfx_context -> render;
+    builders -> render;
+    builders -> compute;
+    resources -> render;
+    resources -> compute;
+    enums -> compute;
+    world -> bridge;
+    camera -> world;
+    camera -> voxel_grid;
+    voxel_grid -> { world bridge camera compute };
+    brownian_motion;
+
+    shaders -> compute;
+    shaders -> render;
+    
+
+}
