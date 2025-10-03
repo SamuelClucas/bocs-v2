@@ -6,4 +6,5 @@ Further development of [bocs](https://github.com/SamuelClucas/bocs) into a 3D li
 - user-defined basis vectors
 - transformation visualisation
 
+### 'core' DAG Visualisation:
 <image width="1794" height="1100" alt="core DAG" src="./docs/core.png" />
