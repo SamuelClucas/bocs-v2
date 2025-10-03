@@ -72,6 +72,10 @@ digraph bocs {
     state -> bridge;
     state -> compute;
     state -> render;
+    state -> world;
+    state -> resources;
+    state -> voxel_grid;
+    state -> gfx_context;
     gfx_context -> bridge;
     gfx_context -> compute;
     gfx_context -> render;
