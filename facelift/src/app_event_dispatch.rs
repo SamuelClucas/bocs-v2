@@ -5,8 +5,6 @@ use winit::event_loop::{ActiveEventLoop, EventLoopProxy};
 use winit::window::Window;
 use std::sync::Arc;
 
-use crate::backend_admin::state_legacy::State;
-
 /// Setup for logical App struct \n
 /// App implements ApplicationHandler for resuming of app, WindowEvent handling \n
 #[derive(Default)]
