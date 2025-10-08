@@ -1,6 +1,6 @@
 use {Stage, StageInjection};
 
-pub struct Backend {
+pub struct Root_Stage {
     win: Arc<Window>,
     gfx_ctx: GraphicsContext,
     world: World,
@@ -10,7 +10,7 @@ pub struct Backend {
     render: Render,
 }
 
-impl Stage<Arc<Window>> for Backend {
+impl Stage<Arc<Window>> for Root_Stage {
     fn new(payload: Arc<Window>) ->  Result<Self, Box<dyn Error>> {
         let mut gfx_ctx: GraphicsContext = GraphicsContext::new(payload)?; // async deferred into GraphicsContext::new() async block
 
