@@ -2,9 +2,9 @@ use winit::{dpi::{PhysicalPosition, PhysicalSize}, window::Window};
 use std::{sync::Arc};
 use crate::{
     backend_admin::{
-        bridge::Bridge, 
+        bridge_legacy::Bridge, 
         gpu::{
-            compute::Compute, gfx_context::GraphicsContext, render::Render, resources::Resources}}, 
+            compute_legacy::Compute, gfx_context::GraphicsContext, render_legacy::Render, resources_legacy::Resources}}, 
     world::{
         voxel_grid::Dims3, 
         world::{World}}

@@ -1,4 +1,4 @@
-use crate::{backend_admin::gpu::gfx_context::GraphicsContext, world::{camera::FPVCamera, voxel_grid::{P2i, Access, SystemGet, SystemSet, VoxelGrid, Dims3, P3}}};
+use crate::{backend_admin::gpu::gfx_context::GraphicsContext, world::{camera_legacy::FPVCamera, voxel_grid::{P2i, Access, SystemGet, SystemSet, VoxelGrid, Dims3, P3}}};
 
 /// Manages all World entities
 pub struct World {

@@ -2,7 +2,7 @@ use wgpu::{BindGroup, BindGroupEntry, BindGroupLayout, PipelineLayout, PipelineL
 use crate::{backend_admin::gpu::{
     builders::BindGroupLayoutBuilder,
     gfx_context::GraphicsContext,
-    resources::Resources}
+    resources_legacy::Resources}
 };
 
 pub struct Render{

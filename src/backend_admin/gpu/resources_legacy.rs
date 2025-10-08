@@ -1,5 +1,5 @@
 use crate::{backend_admin::{
-    bridge::Bridge, gpu::gfx_context::GraphicsContext},
+    bridge_legacy::Bridge, gpu::gfx_context::GraphicsContext},
     world::{voxel_grid::Dims3, world::{BoundingBox, World}
     }};
 use wgpu::{Buffer, BufferUsages, Extent3d, Sampler, Texture, TextureDescriptor, TextureUsages, TextureView, TextureViewDescriptor};

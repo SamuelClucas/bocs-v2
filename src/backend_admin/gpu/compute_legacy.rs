@@ -4,7 +4,7 @@ use crate::{world::voxel_grid::Dims3, backend_admin::gpu::{
     enums::{Access, OffsetBehaviour}, 
     builders::BindGroupLayoutBuilder,
     gfx_context::GraphicsContext,
-    resources::{Uniforms, Resources}}};
+    resources_legacy::{Uniforms, Resources}}};
 
 
 

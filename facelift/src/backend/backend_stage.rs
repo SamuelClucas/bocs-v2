@@ -12,8 +12,7 @@ pub struct Backend {
 
 impl Stage<Arc<Window>> for Backend {
     fn new(payload: Arc<Window>) ->  Result<Self, Box<dyn Error>> {
-
-        let mut gfx_ctx: GraphicsContext = GraphicsContext::new(payload).await?; // needs async, modify new GraphicsCOntext to return result and await inside new()
+        let mut gfx_ctx: GraphicsContext = GraphicsContext::new(payload)?; // async deferred into GraphicsContext::new() async block
 
         let dims: Dims3 = [200, 200, 200]; // 
         // World contains voxel_grid and camera

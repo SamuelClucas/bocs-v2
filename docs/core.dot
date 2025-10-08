@@ -7,8 +7,7 @@ digraph bocs {
     nodesep=0.6;
     ranksep=0.8;
 
-
-    // Nodes with colours roughly matching your PNG
+    // Nodes
     main      [label="main.rs", fillcolor="#5EC5FF"];          // blue
     app_dispatcher  [label="app_dispatcher.rs", fillcolor="#FF9A33"]; // orange
     state     [label="state.rs", fillcolor="#FEC84D"];         // yellow
