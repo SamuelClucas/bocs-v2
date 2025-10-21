@@ -31,6 +31,8 @@ impl State {
     
     pub async fn new(window: Arc<Window>) -> Result<Self, Box<dyn Error>> {
        // let mut gfx_ctx: GraphicsContext = GraphicsContext::new(window).await?;
+       // ^ now managed by root_stage owned by this state later
+       
         let dims: Dims3 = [200, 200, 200];
         // World contains voxel_grid and camera
         let world = World::new(dims, &gfx_ctx);

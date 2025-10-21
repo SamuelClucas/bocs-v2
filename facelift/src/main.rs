@@ -11,7 +11,7 @@ use crate::backend_admin::{state::State, app_dispatcher::App} ;
 
 /// Entry into app \n
 /// See winit and wgpu docs for more information \n
-#[tokio::main] // this is for async as in backend_admin/app_with_event_handler! see here: https://rust-lang.github.io/async-book/part-guide/async-await.html
+#[tokio::main] // this is for async as in backend_admin/app_event_dispatch see here: https://rust-lang.github.io/async-book/part-guide/async-await.html
 async fn main() -> Result<(), Box<dyn Error>> { // see async  
     // The EventLoop interfaces with the OS 
     // Tracking WindowEvent and DeviceEvent events...
@@ -22,5 +22,4 @@ async fn main() -> Result<(), Box<dyn Error>> { // see async
     event_loop.set_control_flow(ControlFlow::Poll);
 
     Ok(event_loop.run_app(&mut App::new(move || proxy))?) // ! APP ENTRY HERE ! //
-
 }
